@@ -18,9 +18,9 @@ when mathrandom is 0.33 <= x <= 0.67, paper
 
 /*when mathrandom is 0.67 < x <= 1, scissors
 */
-else {return "scissors"}
+    else {return "scissors"}
 
-}
+    }
 /*
 assign result to computer choice,
 */
@@ -51,48 +51,48 @@ function playRound(humanChoice, computerChoice) {
         console.log("draw! You both picked rock.")
         console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}
 
-else if (humanChoice === "rock" && computerChoice === "paper") {
+    else if (humanChoice === "rock" && computerChoice === "paper") {
     console.log("You lose! Rock gets owned by paper.");
-computerScore += 1;
-console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}
+    computerScore += 1;
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}
 
-else if (humanChoice === "rock" && computerChoice === "scissors") {
+    else if (humanChoice === "rock" && computerChoice === "scissors") {
     console.log("You win! Rock crushes scissors.");
-humanScore += 1;
-console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}    
+    humanScore += 1;
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}    
 
-else if (humanChoice === "paper" && computerChoice === "paper") {
+    else if (humanChoice === "paper" && computerChoice === "paper") {
     console.log("draw! You both picked paper.");
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
-}
+    }
 
-else if (humanChoice === "paper" && computerChoice === "scissors") {
+    else if (humanChoice === "paper" && computerChoice === "scissors") {
     console.log("You lose! Paper gets cut by scissors.");
-computerScore += 1;
-console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}    
+    computerScore += 1;
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}    
 
-else if (humanChoice === "paper" && computerChoice === "rock") {
+    else if (humanChoice === "paper" && computerChoice === "rock") {
     console.log("You win! Paper owns rock.");
-humanScore += 1;
-console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}
+    humanScore += 1;
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}
 
-else if (humanChoice === "scissors" && computerChoice === "scissors") {
+    else if (humanChoice === "scissors" && computerChoice === "scissors") {
     console.log("draw! You both picked scissors.");
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
-}    
+    }    
 
-else if (humanChoice === "scissors" && computerChoice === "rock") {
+    else if (humanChoice === "scissors" && computerChoice === "rock") {
     console.log("You lose! Scissors gets crushed by rock.");
-computerScore += 1;
-console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}   
+    computerScore += 1;
+    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}   
 
-else if (humanChoice === "scissors" && computerChoice === "paper") {
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
     console.log("You win! Scissors cut paper.");
     humanScore += 1;
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
-}    
-
-}
+    }    
+    else {alert("Please enter either rock,paper or scissors")}
+    }
 
 
 
@@ -118,9 +118,12 @@ function playGame() {
         if (humanScore > computerScore) {
             alert("You win!");}
             else { 
-                alert("You lose!")}
+                alert("You lose!")};
+        humanScore = 0;
+        computerScore = 0;
     
-}
+    
+    }
  /*
  function playGame() {
     playRound(getHumanChoice(), getComputerChoice());

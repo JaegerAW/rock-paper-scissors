@@ -47,8 +47,8 @@ let computerScore = 0;
 check
 */
 function playRound(humanChoice, computerChoice) {
-    if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log("draw! You both picked rock.")
+    if (humanChoice === computerChoice) {
+        console.log(`draw! You both picked ${humanChoice}.`)
         console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}
 
     else if (humanChoice === "rock" && computerChoice === "paper") {
@@ -61,10 +61,7 @@ function playRound(humanChoice, computerChoice) {
     humanScore += 1;
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore)}    
 
-    else if (humanChoice === "paper" && computerChoice === "paper") {
-    console.log("draw! You both picked paper.");
-    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
-    }
+    
 
     else if (humanChoice === "paper" && computerChoice === "scissors") {
     console.log("You lose! Paper gets cut by scissors.");
@@ -76,10 +73,7 @@ function playRound(humanChoice, computerChoice) {
     humanScore += 1;
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);}
 
-    else if (humanChoice === "scissors" && computerChoice === "scissors") {
-    console.log("draw! You both picked scissors.");
-    console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
-    }    
+ 
 
     else if (humanChoice === "scissors" && computerChoice === "rock") {
     console.log("You lose! Scissors gets crushed by rock.");
@@ -102,6 +96,10 @@ const btnScissors = document.querySelector("#scissors");
 
 
 /*each button plays a round with its respective human choice*/
+
+/*if i directly add playRound(rock, getComputerChoice), i'm accidentally executing getComputerChoice().
+instead, use a callback function like below*/
+
 btnRock.addEventListener("click", function() {playRound("rock", getComputerChoice())});
 btnPaper.addEventListener("click", 
 (() => {

@@ -91,9 +91,25 @@ function playRound(humanChoice, computerChoice) {
     humanScore += 1;
     console.log("Your score: " + humanScore + ", Computer Score: " + computerScore);
     }    
-    else {alert("Please enter either rock,paper or scissors")}
+    
     }
 
+/*assign variable to the 3 choices buttons*/
+
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
+
+
+/*each button plays a round with its respective human choice*/
+btnRock.addEventListener("click", function() {playRound("rock", getComputerChoice())});
+btnPaper.addEventListener("click", 
+(() => {
+    playRound("paper", getComputerChoice())
+}
+)
+);
+btnScissors.addEventListener("click",(()=>{playRound("scissors", getComputerChoice())}))
 
 
 /*
@@ -112,6 +128,7 @@ function playRound(humanChoice, computerChoice) {
  */
 
  /*each game consists of 5 rounds*/
+/*play game for 5 rounds
 function playGame() {
     for (i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice())};

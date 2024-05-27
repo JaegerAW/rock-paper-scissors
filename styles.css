@@ -52,11 +52,15 @@ button:hover {
 
 .results {
     background-color: #fbd1d6;
-    
+    border: 2px solid white;
+
+    white-space: pre;
     border-radius: 5px;
     
     text-align: center;
     
     font-size: 30px;
-    padding-top: 30px;
+    padding: 30px;
 }
+
+.hidden {display: none;}
